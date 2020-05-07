@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from 'styled-components';
-import { Grid, Card, Icon, Image, Button, Divider, Segment, GridColumn, Container } from 'semantic-ui-react'
-import Link from 'next/link'
+import React from "react";
+import styled from "styled-components";
+import { Grid, Image, Button } from "semantic-ui-react";
 
 const defaultUserImage = require("../../assets/defaultFace.png");
 
@@ -13,36 +12,14 @@ const StyledButton = styled(Button)`
   color: #ffffff !important;
   width: 120px !important;
   font-weight: 500 !important;
-`
-
-const NoPaddingColumn = styled(Grid.Column)`
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-`
-const NoLeftPaddingColumn = styled(Grid.Column)`
-  padding-left: 0 !important;
-`
-
-const MainText = styled.span`
-  font-size: 17px;
-  font-weight: 500;
-  color: #2e384d;
-`
+`;
 
 const SubText = styled.span`
   font-size: 13px;
   font-weight: 500;
   color: #2e384d;
   float: left;
-`
-
-const StyledRowHalfBottomPadding = styled(Grid.Row)`
-  padding-bottom: 0.5em !important;
-`
-
-const StyledRowHalfTopPadding = styled(Grid.Row)`
-  padding-top: 0.5em !important;
-`
+`;
 
 const StyledGrid = styled(Grid)`
   width: 100%;
@@ -50,44 +27,49 @@ const StyledGrid = styled(Grid)`
   border-bottom: solid 1px rgba(46, 91, 255, 0.08);
   background-color: #ffffff;
   padding-top: 64px !important;
-`
+`;
 
+const StyledMainWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+`;
+
+const StyledImgWrapper = styled.div`
+  margin-right: 1rem;
+`;
+
+const StyledTwoRowWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+`;
+
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 const NonAuthUserHeader = () => (
   <StyledGrid>
-    <Grid columns='equal'>
-      <Grid.Row>
-        <Grid.Column width={4}>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column>
-                <Image
-                  circular
-                  size="tiny"
-                  src={defaultUserImage}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Grid.Column>
-        <Grid.Column>
-          <Grid columns='equal'>
-            <StyledRowHalfBottomPadding>
-              {/* <NoPaddingColumn width={16}><MainText>댕댕비자에 오신 것을 환영합니다!</MainText></NoPaddingColumn> */}
-              <NoPaddingColumn><SubText>댕댕비자에 오신 것을 환영합니다!</SubText></NoPaddingColumn>
-            </StyledRowHalfBottomPadding>
-          </Grid>
-          <Grid columns='equal'>
-            <StyledRowHalfTopPadding>
-              <NoLeftPaddingColumn><StyledButton size="tiny" opacity="0.5">이용방법</StyledButton></NoLeftPaddingColumn>
-              <Link href="/VerificationPage">
-                <NoLeftPaddingColumn><StyledButton size="tiny">신분인증</StyledButton></NoLeftPaddingColumn>
-              </Link>
-            </StyledRowHalfTopPadding>
-          </Grid>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+    <StyledMainWrapper>
+      <StyledImgWrapper>
+        <Image circular size="tiny" src={defaultUserImage} />
+      </StyledImgWrapper>
+      <StyledTwoRowWrapper>
+        <SubText>댕댕비자에 오신 것을 환영합니다!</SubText>
+        <StyledButtonWrapper>
+          <StyledButton size="tiny" opacity="0.5">
+            이용방법
+          </StyledButton>
+          <StyledButton size="tiny">신분인증</StyledButton>
+        </StyledButtonWrapper>
+      </StyledTwoRowWrapper>
+    </StyledMainWrapper>
   </StyledGrid>
-)
+);
 
 export default NonAuthUserHeader;
