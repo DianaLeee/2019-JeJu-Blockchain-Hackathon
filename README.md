@@ -15,6 +15,6 @@
 4. `yarn run dev`
 
 ## Screenshots
-| col 1 | col 2 | col 3 | col 4 | 
-|-------|-------|-------|-------|
-| ![최초진입페이지](./assets/screenshot/initialPage.png) | ![메인페이지](./assets/screenshot/mainPage.png) | ![등록페이지](./assets/screenshot/registerPage.png) | ![비자발급페이지](./assets/screenshot/issueVisa.png) |
+| 최초진입페이지 | 메인페이지 | 등록페이지 |
+|-------|-------|-------|
+| ![최초진입페이지](./assets/screenshot/initialPage.png) | ![메인페이지](./assets/screenshot/mainPage.png) | ![등록페이지](./assets/screenshot/registerPage.png) |
