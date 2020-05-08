@@ -1,14 +1,9 @@
-import PageLayout from "../layouts/PageLayout"
-import Main from "../components/MainPage/Main"
-import UserHeader from "../components/UserHeader/UserHeader"
-import NavTopHeader from "../components/Common/NavTopHeader"
-import NavBottomFooter from "../components/Common/NavBottomFooter"
+import PageLayout from "../layouts/PageLayout";
+import Main from "../components/MainPage/Main";
 
 const MainPage = () => (
-  <PageLayout headerTitle="반려견 DID" isBack={false} >
-    {/* <NavTopHeader title="댕댕 VISA" /> */}
+  <PageLayout headerTitle="반려견 DID" isBack={false}>
     <Main />
-    {/* <NavBottomFooter /> */}
   </PageLayout>
 );
 export default MainPage;

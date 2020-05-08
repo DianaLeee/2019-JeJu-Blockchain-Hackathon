@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components';
-import { Grid, Card, Icon, Image, Button, Divider, Segment, GridColumn, Container } from 'semantic-ui-react'
-import Link from 'next/link'
+import React from "react";
+import styled from "styled-components";
+import { Grid, Image, Button } from "semantic-ui-react";
+import Link from "next/link";
 
 const StyledButton = styled(Button)`
   background-color: #2e5bff !important;
@@ -11,35 +11,19 @@ const StyledButton = styled(Button)`
   color: #ffffff !important;
   width: 120px !important;
   font-weight: 500 !important;
-`
-
-const NoPaddingColumn = styled(Grid.Column)`
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-`
-const NoLeftPaddingColumn = styled(Grid.Column)`
-  padding-left: 0 !important;
-`
+`;
 
 const MainText = styled.span`
   font-size: 17px;
   font-weight: 500;
   color: #2e384d;
-`
+`;
 
 const SubText = styled.span`
   font-size: 10px;
   color: #8798ad;
   float: left;
-`
-
-const StyledRowHalfBottomPadding = styled(Grid.Row)`
-  padding-bottom: 0.5em !important;
-`
-
-const StyledRowHalfTopPadding = styled(Grid.Row)`
-  padding-top: 0.5em !important;
-`
+`;
 
 const StyledGrid = styled(Grid)`
   width: 100%;
@@ -47,46 +31,66 @@ const StyledGrid = styled(Grid)`
   border-bottom: solid 1px rgba(46, 91, 255, 0.08);
   background-color: #ffffff;
   padding-top: 64px !important;
-`
+`;
+
+const StyledMainWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+`;
+
+const StyledTextWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const StyledImgWrapper = styled.div`
+  margin-right: 1rem;
+`;
+
+const StyledTwoRowWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+`;
+
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 const UserHeader = () => (
   <StyledGrid>
-    <Grid columns='equal' style={{ paddingLeft: 'none !important', paddingRight: 'none !important' }}>
-      <Grid.Row>
-        <Grid.Column width={4}>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column>
-                <Image
-                  circular
-                  size="tiny"
-                  src='https://react.semantic-ui.com/images/avatar/large/molly.png'
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Grid.Column>
-        <Grid.Column>
-          <Grid columns='equal'>
-            <StyledRowHalfBottomPadding>
-              <NoPaddingColumn width={3}><MainText>김유진</MainText></NoPaddingColumn>
-              <NoPaddingColumn><SubText>Yujin Kim</SubText></NoPaddingColumn>
-            </StyledRowHalfBottomPadding>
-          </Grid>
-          <Grid columns='equal'>
-            <StyledRowHalfTopPadding>
-              <Link href="/RegisterPage">
-                <NoLeftPaddingColumn><StyledButton size="tiny" opacity="0.5">반려견 등록</StyledButton></NoLeftPaddingColumn>
-              </Link>
-              <Link href="/VisaFlightPage">
-                <NoLeftPaddingColumn><StyledButton size="tiny">VISA 발급</StyledButton></NoLeftPaddingColumn>
-              </Link>
-            </StyledRowHalfTopPadding>
-          </Grid>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+    <StyledMainWrapper>
+      <StyledImgWrapper>
+        <Image
+          circular
+          size="tiny"
+          src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+        />
+      </StyledImgWrapper>
+      <StyledTwoRowWrapper>
+        <StyledTextWrapper>
+          <MainText style={{ marginRight: "0.5rem" }}>김유진</MainText>
+          <SubText>Yujin Kim</SubText>
+        </StyledTextWrapper>
+        <StyledButtonWrapper>
+          <Link href="/RegisterPage">
+            <StyledButton size="tiny" opacity="0.5">
+              반려견 등록
+            </StyledButton>
+          </Link>
+          <Link href="/VisaFlightPage">
+            <StyledButton size="tiny">VISA 발급</StyledButton>
+          </Link>
+        </StyledButtonWrapper>
+      </StyledTwoRowWrapper>
+    </StyledMainWrapper>
   </StyledGrid>
-)
+);
 
 export default UserHeader;
