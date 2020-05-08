@@ -60,16 +60,23 @@ const DivFloat = styled.div`
   float: left;
   text-align: left;
 `;
-const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-`;
+
+const illnessArray = [
+  { id: 0, value: "슬개골" },
+  { id: 1, value: "결석" },
+  { id: 2, value: "습진" },
+  { id: 3, value: "눈물자국" },
+  { id: 4, value: "각막손상" },
+  { id: 5, value: "기관지협착증" },
+  { id: 6, value: "발작" },
+  { id: 7, value: "피부질환" }
+];
 
 interface IRegisterTwoProps {
   globalStore?: GlobalStore;
 }
 
+// Second registration page
 @inject(STORE.globalStore)
 @observer
 export default class RegisterTwo extends React.Component<IRegisterTwoProps> {
@@ -194,70 +201,16 @@ export default class RegisterTwo extends React.Component<IRegisterTwoProps> {
               <StyledFormField>
                 <MainText>병력을 적어주세요</MainText>
                 <DivFloat>
-                  <SelectButton
-                    active={this.remarks[0]}
-                    onClick={() => this.remarksClick(0)}
-                    basic
-                    size="mini"
-                  >
-                    슬개골
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[1]}
-                    onClick={() => this.remarksClick(1)}
-                    basic
-                    size="mini"
-                  >
-                    결석
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[2]}
-                    onClick={() => this.remarksClick(2)}
-                    basic
-                    size="mini"
-                  >
-                    습진
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[3]}
-                    onClick={() => this.remarksClick(3)}
-                    basic
-                    size="mini"
-                  >
-                    눈물자국
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[4]}
-                    onClick={() => this.remarksClick(4)}
-                    basic
-                    size="mini"
-                  >
-                    각막손상
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[5]}
-                    onClick={() => this.remarksClick(5)}
-                    basic
-                    size="mini"
-                  >
-                    기관지협착증
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[6]}
-                    onClick={() => this.remarksClick(6)}
-                    basic
-                    size="mini"
-                  >
-                    발작
-                  </SelectButton>
-                  <SelectButton
-                    active={this.remarks[7]}
-                    onClick={() => this.remarksClick(7)}
-                    basic
-                    size="mini"
-                  >
-                    피부질환
-                  </SelectButton>
+                  {illnessArray.map((item: any) => (
+                    <SelectButton
+                      active={this.remarks[item.id]}
+                      onClick={() => this.remarksClick(item.id)}
+                      basic
+                      size="mini"
+                    >
+                      {item.value}
+                    </SelectButton>
+                  ))}
                 </DivFloat>
                 <TextArea placeholder="기타 (30자 이내)" />
               </StyledFormField>
