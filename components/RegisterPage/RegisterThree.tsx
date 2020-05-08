@@ -92,6 +92,7 @@ const shipArray = [
   { id: 2, value: "현장방문", price: "3,000" }
 ];
 
+// Third registration page
 @inject(STORE.globalStore)
 @observer
 export default class RegisterThree extends React.Component<

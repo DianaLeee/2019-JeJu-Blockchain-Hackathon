@@ -1,14 +1,6 @@
 import React, { Component, useState } from "react";
 import styled from "styled-components";
-import {
-  Input,
-  Radio,
-  Form,
-  Dropdown,
-  Button,
-  GridColumn,
-  TextArea
-} from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 
 import Link from "next/link";
 import { GlobalStore } from "../../stores/globalStore";
@@ -35,7 +27,6 @@ const MainText = styled.div`
   letter-spacing: normal;
   color: #2e384d;
   text-align: left !important;
-  /* float: left !important; */
 `;
 
 const StyledDiv = styled.div`
@@ -45,14 +36,8 @@ const StyledDiv = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  /* display: flex; */
   width: 312px;
   float: left;
-`;
-const StyledFormField = styled(Form.Field)`
-  margin-bottom: 12px !important;
-  float: left;
-  /* height: 50px !important; */
 `;
 
 const SubmitButton = styled(Button)`
@@ -71,8 +56,6 @@ const TextDiv = styled.div`
   display: flex;
   padding-bottom: 20px !important;
 `;
-
-// const CenterDiv
 
 const SubText = styled(MainText)`
   color: #8798ad;
@@ -98,18 +81,16 @@ const NormalSubText = styled(BoldSubText)`
 `;
 
 const StyledImage = styled.img`
-  /* width: 292px; */
   width: 100%;
   height: 100%;
-  /* height: 465px; */
   object-fit: contain;
-  /* margin-right: 0px !important; */
 `;
 
 interface IRegisterFourProps {
   globalStore?: GlobalStore;
 }
 
+// Last registration page
 @inject(STORE.globalStore)
 @observer
 export default class RegisterFour extends React.Component<IRegisterFourProps> {

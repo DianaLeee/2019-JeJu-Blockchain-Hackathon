@@ -33,6 +33,7 @@ const Container = styled.div`
   justify-items: center;
 `;
 
+// Page Layout with Navigation Top Header & Authorized User Information Header
 const PageLayout = (props: IPageLayoutProps) => (
   <Container>
     <NavTopHeader title={props.headerTitle} isBack={props.isBack} />

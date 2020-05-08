@@ -53,6 +53,7 @@ const StyledButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
 const NonAuthUserHeader = () => (
   <StyledGrid>
     <StyledMainWrapper>

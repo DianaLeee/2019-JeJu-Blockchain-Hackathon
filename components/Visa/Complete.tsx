@@ -1,14 +1,6 @@
 import React, { Component, useState } from "react";
 import styled from "styled-components";
-import {
-  Input,
-  Radio,
-  Form,
-  Dropdown,
-  Button,
-  GridColumn,
-  TextArea
-} from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 import Link from "next/link";
 
 const cardImage = require("../../assets/visa/complete.png");
@@ -23,7 +15,6 @@ const MainText = styled.div`
   letter-spacing: normal;
   color: #2e384d;
   text-align: left !important;
-  /* float: left !important; */
 `;
 
 const StyledDiv = styled.div`
@@ -33,14 +24,8 @@ const StyledDiv = styled.div`
 `;
 
 const LeftDiv = styled.div`
-  /* display: flex; */
   width: 312px;
   float: left;
-`;
-const StyledFormField = styled(Form.Field)`
-  margin-bottom: 12px !important;
-  float: left;
-  /* height: 50px !important; */
 `;
 
 const SubmitButton = styled(Button)`
@@ -60,8 +45,6 @@ const TextDiv = styled.div`
   padding-bottom: 20px !important;
 `;
 
-// const CenterDiv
-
 const SubText = styled(MainText)`
   color: #8798ad;
   font-size: 12px;
@@ -70,34 +53,10 @@ const SubText = styled(MainText)`
   padding-bottom: 20px !important;
 `;
 
-const BoldSubText = styled.span`
-  font-family: "AppleSDGothicNeo";
-  font-size: 14px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.86;
-  letter-spacing: normal;
-  color: #8798ad;
-  margin-top: 194px !important;
-`;
-
-const NormalSubText = styled(BoldSubText)`
-  font-weight: normal;
-`;
-
 const StyledImage = styled.img`
-  /* width: 292px; */
   width: 100%;
   height: 100%;
-  /* height: 465px; */
   object-fit: contain;
-  /* margin-right: 0px !important; */
-`;
-const Rectangle = styled.div`
-  width: 360px;
-  height: 364px;
-  background-color: #ffffff;
 `;
 
 const Complete = () => {

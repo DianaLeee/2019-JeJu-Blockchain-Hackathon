@@ -1,31 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import {
-  Grid,
-  Menu,
-  Icon,
-  Image,
-  Button,
-  Divider,
-  Segment,
-  GridColumn,
-  Container
-} from "semantic-ui-react";
+import { Grid, Menu, Image } from "semantic-ui-react";
 const homeImg = require("../../assets/home.svg");
 const settingImg = require("../../assets/setting.svg");
 const communityImg = require("../../assets/community.svg");
 const placeImg = require("../../assets/place.svg");
 
-// const StyledImage = styled(Image)`
-//   width: 24px !important;
-//   height: 24px !important;
-// `
-
-const MainGrid = styled(Grid)`
-  /* width: 100%;
-  background-color: #ffffff; */
-  /* display: flex; */
-`;
+const MainGrid = styled(Grid)``;
 
 interface INavBottomFooter {
   title?: string;
@@ -63,10 +44,7 @@ const StyledText = styled.div<INavBottomFooter>`
 `;
 const StyledMenuItem = styled(Menu.Item)`
   &::before {
-    /* border: 0px !important; */
     width: 0px !important;
-    /* border: 10px solid red !important; */
-    /* background: transparent !important; */
   }
 `;
 

@@ -1,15 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Grid,
-  Card,
-  Icon,
-  Image,
-  Button,
-  Divider,
-  Segment,
-  GridColumn
-} from "semantic-ui-react";
+import { Grid, Button } from "semantic-ui-react";
 
 import Link from "next/link";
 
@@ -19,17 +10,6 @@ interface IVerificationProps {
   width?: string;
   height?: string;
 }
-
-const StyledGrid = styled(Grid)`
-  text-align: center;
-  vertical-align: middle;
-  height: 575px;
-  /* height: 100vh; */
-`;
-
-const StyledGridColumn = styled(Grid.Column)`
-  max-width: 450;
-`;
 
 const MainText = styled.span`
   width: 165px;
@@ -47,16 +27,6 @@ const MainText = styled.span`
 
 const BoldText = styled(MainText)`
   font-weight: 600;
-`;
-
-const GridRow = styled(Grid.Row)`
-  padding-top: 45px !important;
-  width: ${props => props.width} !important;
-  height: ${props => props.height} !important;
-`;
-
-const BaseDiv = styled.div`
-  height: 100%;
 `;
 
 const StyledDiv = styled.div`
@@ -86,9 +56,7 @@ const ButtonDiv = styled.div`
   left: -10px;
   bottom: 0.7em;
 `;
-// <Card.Group> 으로 카드 그룹 묶으면 가운데 정렬되지 않음
 const Verification = () => (
-  // <StyledGrid>
   <StyledDiv>
     <div>
       <MainText>본인인증을 위해</MainText>
@@ -107,7 +75,6 @@ const Verification = () => (
       </ButtonDiv>
     </WrapperDiv>
   </StyledDiv>
-  // </StyledGrid>
 );
 
 export default Verification;

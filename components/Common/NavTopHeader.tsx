@@ -1,16 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Grid,
-  Card,
-  Icon,
-  Image,
-  Button,
-  Divider,
-  Segment,
-  GridColumn,
-  Container
-} from "semantic-ui-react";
+import { Grid, Icon, Image } from "semantic-ui-react";
 import Router from "next/router";
 
 const menuImg = require("../../assets/menu.svg");
@@ -37,7 +27,6 @@ const MainGrid = styled(Grid)`
   align-items: center !important;
   flex-direction: column;
 
-  /* 어긋나는 오류땜에 넣었더니 됌 */
   margin: 0 0 0 0 !important;
 `;
 

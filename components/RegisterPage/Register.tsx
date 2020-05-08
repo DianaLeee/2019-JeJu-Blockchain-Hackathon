@@ -39,17 +39,6 @@ interface IRegisterProps {
   primary?: boolean;
 }
 
-// const StyledGrid = styled(Grid)`
-//   text-align: left;
-//   vertical-align: middle;
-//   height: 575px;
-//   /* height: 100vh; */
-// `
-
-// const StyledGridColumn = styled(Grid.Column)`
-//   max-width: 450;
-// `
-
 const MainText = styled.div`
   font-size: 18px;
   font-weight: 300 !important;
@@ -74,37 +63,16 @@ const StyledImage = styled.img`
   margin-right: 0px !important;
 `;
 
-// const StyledButton = styled(Button)`
-//   width: 312px;
-//   height: 50px;
-//   border-radius: 4px;
-//   background-color: #2e5bff !important;
-//   color: #ffffff !important;
-// `
-
 const WrapperDiv = styled.div`
   position: relative;
 `;
-// const ButtonDiv = styled.div`
-//   position: absolute;
-//   left: -10px;
-//   bottom: 0.7em;
-// `
+
 const LeftDiv = styled.div`
-  /* display: flex; */
   width: 312px;
   float: left;
 `;
 const StyledFormField = styled(Form.Field)`
   margin-bottom: 40px !important;
-`;
-
-const StyledInput = styled(Input)`
-  /* not good to add */
-  /* border: solid 1px #ced0da !important; */
-`;
-const InputWrapper = styled.div`
-  padding-bottom: 40px;
 `;
 
 const StyledButton = styled(Button)`
@@ -127,7 +95,7 @@ interface IRegisterTwoProps {
   globalStore?: GlobalStore;
 }
 
-// <Card.Group> 으로 카드 그룹 묶으면 가운데 정렬되지 않음
+// First registration page
 @inject(STORE.globalStore)
 @observer
 export default class Register extends React.Component<IRegisterTwoProps> {
@@ -170,7 +138,6 @@ export default class Register extends React.Component<IRegisterTwoProps> {
             </StyledFormField>
             <StyledFormField>
               <MainText>성별을 선택해주세요</MainText>
-              {/* TODO: color does not change */}
               <StyledButton
                 active={this.props.globalStore.gender === "1"}
                 basic
@@ -188,7 +155,6 @@ export default class Register extends React.Component<IRegisterTwoProps> {
             </StyledFormField>
             <StyledFormField>
               <MainText>중성화 수술을 했나요?</MainText>
-              {/* TODO: color does not change */}
               <StyledButton
                 active={this.props.globalStore.neutralization === "1"}
                 basic

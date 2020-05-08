@@ -1,15 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Grid,
-  Card,
-  Icon,
-  Image,
-  Button,
-  Divider,
-  Segment,
-  GridColumn
-} from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import AddCard from "../Card/AddCard";
 
 const StyledGrid = styled(Grid)`
@@ -27,6 +18,8 @@ const StyledGrid = styled(Grid)`
 const StyledGridColumn = styled(Grid.Column)`
   max-width: 450px;
 `;
+
+// Initial Page for non authorized user
 const Initial = () => (
   <StyledGrid>
     <StyledGridColumn>
