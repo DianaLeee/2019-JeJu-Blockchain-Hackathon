@@ -1,21 +1,31 @@
-import React from 'react'
-import styled from 'styled-components';
-import { Grid, Card, Icon, Image, Button, Divider, Segment, GridColumn, Container } from 'semantic-ui-react'
-import Router from 'next/router';
+import React from "react";
+import styled from "styled-components";
+import {
+  Grid,
+  Card,
+  Icon,
+  Image,
+  Button,
+  Divider,
+  Segment,
+  GridColumn,
+  Container
+} from "semantic-ui-react";
+import Router from "next/router";
 
-const menuImg = require('../../assets/menu.svg')
-const notiImg = require('../../assets/noti.svg')
+const menuImg = require("../../assets/menu.svg");
+const notiImg = require("../../assets/noti.svg");
 
 const StyledImage = styled(Image)`
   width: 24px !important;
   height: 24px !important;
-`
+`;
 
 const StyledIcon = styled(Icon)`
   width: 24px !important;
   height: 24px !important;
   color: #2e384d !important;
-`
+`;
 
 const MainGrid = styled(Grid)`
   width: 100%;
@@ -29,7 +39,7 @@ const MainGrid = styled(Grid)`
 
   /* 어긋나는 오류땜에 넣었더니 됌 */
   margin: 0 0 0 0 !important;
-`
+`;
 
 const NavText = styled.div`
   height: 20px;
@@ -37,7 +47,7 @@ const NavText = styled.div`
   font-weight: 500;
   color: #2e384d;
   text-align: center;
-`
+`;
 
 interface INavTopHeader {
   title?: string;
@@ -45,11 +55,14 @@ interface INavTopHeader {
 }
 
 const NavTopHeader = (props: INavTopHeader) => (
-  <MainGrid columns='equal'>
+  <MainGrid columns="equal">
     <Grid.Row>
       <Grid.Column>
-        {props.isBack ? <StyledIcon name="arrow left" onClick={() => Router.back()} /> : <StyledImage src={menuImg} />}
-        {/* <StyledImage src={menuImg} /> */}
+        {props.isBack ? (
+          <StyledIcon name="arrow left" onClick={() => Router.back()} />
+        ) : (
+          <StyledImage src={menuImg} />
+        )}
       </Grid.Column>
       <Grid.Column>
         <NavText>{props.title}</NavText>
@@ -59,6 +72,6 @@ const NavTopHeader = (props: INavTopHeader) => (
       </Grid.Column>
     </Grid.Row>
   </MainGrid>
-)
+);
 
 export default NavTopHeader;
